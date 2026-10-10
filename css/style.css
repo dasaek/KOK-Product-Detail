@@ -1,0 +1,1944 @@
+@charset "utf-8";
+
+/* webfont 페이퍼로지 */
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* ========== 기본 세팅 ========== */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    appearance: none;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #222;
+    background-color: #fffae6;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+/* =============== sidde_bar 사이드 바 =============== */
+.side_bar {
+    position: fixed;
+    right: 30px;
+    top: 780px;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    z-index: 99;
+}
+
+.side_bar img {
+    display: block;
+    width: 50px;
+
+    cursor: pointer;
+}
+
+/* =============== header 헤더 =============== */
+header {
+    height: 100px;
+
+    font-family: 'Paperlogy';
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #fffae6;
+    color: #222;
+    border-bottom: 4px solid #ff5b38;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.inner_header {
+    width: 1780px;
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+}
+
+/* =============== gnb 메뉴 =============== */
+.gnb {
+    display: flex;
+}
+
+.gnb li {
+    margin-left: 167px;
+
+    position: relative;
+}
+
+.gnb li a {
+    display: inline-block;
+
+    /* 꽃을 텍스트 "뒤로" 위치하기 위한 position */
+    position: relative;
+    z-index: 1;
+}
+
+.gnb li::before {
+    /* gnb 호버 공통 꾸미기 */
+    content: "";
+
+    /* 꽃의 이미지 크기 */
+    width: 19px;
+    height: 18px;
+
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    z-index: 0;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.gnb li:first-child::before {
+    background-image: url(../images/header/orange_hover.svg);
+    transform: scale(2.8);
+    transform-origin: right top;
+}
+
+.gnb li:nth-child(2)::before {
+    background-image: url(../images/header/blue_hover.svg);
+}
+
+.gnb li:nth-child(3)::before {
+    background-image: url(../images/header/yellow_hover.svg);
+}
+
+.gnb li:nth-child(4)::before {
+    background-image: url(../images/header/green_hover.svg);
+}
+
+.gnb li:nth-child(5)::before {
+    background-image: url(../images/header/brown_hover.svg);
+}
+
+.gnb li:hover::before {
+    transform: scale(2.8);
+    transform-origin: right top;
+}
+
+.util {
+    display: flex;
+}
+
+.util li {
+    margin-left: 30px;
+}
+
+/* =============== product 상품 =============== */
+#product {
+    min-height: 945px;
+    background-color: #ffffff;
+
+    padding-bottom: 80px;
+    box-sizing: border-box;
+}
+
+#product .inner_wrap {
+    width: 1350px;
+    min-height: 680px;
+    margin: 0 auto;
+    padding-top: 200px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#product .img_wrap img {
+    width: 690px;
+    height: 687px;
+    display: block;
+}
+
+/* 상품 선택 정보 */
+#product .info {
+    width: 567px;
+
+    position: relative;
+    /* .action_button 부모 🌷 */
+}
+
+/* 위시리스트 + 공유 버튼 */
+#product .action_button {
+    width: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    /* .info 자식 🌷 */
+    top: 0;
+    right: 0;
+}
+
+#product .action_button img {
+    display: block;
+    cursor: pointer;
+}
+
+/* 상품 이름 */
+.name {
+    display: flex;
+    align-items: center;
+    margin: 27px 0 10px;
+}
+
+.name h3 {
+    font-family: 'Paperlogy';
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.name span {
+    width: 58px;
+    height: 25px;
+    font-size: 14px;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+
+    background-color: #2558D8;
+    border-radius: 50px;
+}
+
+/* 난이도 */
+.level {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 9px;
+}
+
+.level p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 9px;
+}
+
+.square {
+    display: flex;
+    gap: 4px;
+
+    padding-bottom: 2px;
+}
+
+.square .on {
+    width: 11px;
+    height: 11px;
+    background-color: #2558D8;
+}
+
+.square span {
+    width: 11px;
+    height: 11px;
+    background-color: #ccc;
+}
+
+.video {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff5b38;
+
+    margin-bottom: 28px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 600;
+
+    padding-bottom: 25px;
+    border-bottom: 1px solid #333;
+}
+
+/* ---- 공통 꾸미기 - 시작 ---- */
+#product .delive>strong,
+#product .size>strong,
+#product .color>strong {
+    /* 왼쪽 정렬 */
+    width: 125px;
+}
+
+#product strong {
+    font-weight: 500;
+}
+
+#product .delive,
+#product .size,
+#product .color {
+    /* 양 옆 정렬 */
+    display: flex;
+    font-size: 14px;
+}
+
+#product .delive,
+#product .size {
+    padding: 30px 0;
+    border-bottom: 1px solid #c7c7c7;
+
+    align-items: center;
+}
+
+/* 사이즈 옵션 바 */
+.size select {
+    width: 425px;
+    padding: 7px 6px;
+
+    border: none;
+    border: 1px solid #d9d9d9;
+
+    font: inherit;
+    color: inherit;
+}
+
+/* 실 색상 옵션 바 */
+.color {
+    padding: 20px 0 30px;
+    border-bottom: 1px solid #333;
+}
+
+.color_select_wrap {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+}
+
+.color_select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color_select button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #222;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+/* ★포인트 컬러 사이즈 수정 */
+.color_select[data-type="point"] .color_btn {
+    width: 35px;
+    height: 35px;
+
+    margin: 5px 0;
+}
+
+.color_select p {
+    margin-top: 8px;
+}
+
+/* 베이스/포인트 버튼 안에 들어가는 실 이미지 js 연동 */
+.color_btn {
+    overflow: hidden;
+}
+
+.color_btn img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* 12가지 색상 옵션 바 */
+#product .color_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0 0 110px;
+
+    display: none;
+    /* 숨기기 */
+}
+
+#product .color_list.active {
+    display: flex;
+    /* 나타나기 */
+}
+
+.color_chip {
+    width: 75px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.color_chip button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* ★포인트 버튼의 옵션 바 사이즈도 35px */
+.color_list.point_mode .color_chip button {
+    width: 35px;
+    height: 35px;
+}
+
+.color_chip button img {
+    width: 100%;
+}
+
+.color_chip p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 실 클릭 시 선택 상태  */
+.color_chip button.active {
+    border: 3px solid #222;
+}
+
+#product .button,
+#product .total_price {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 결제 금액 */
+.total_price {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 28px 0 22px;
+}
+
+/* 장바구니 + 구매 버튼 */
+.cart_btn,
+.buy_btn {
+    cursor: pointer;
+}
+
+.cart_btn {
+    padding: 20px;
+    border: 2px solid #d9d9d9;
+    background-color: #fff;
+}
+
+.buy_btn {
+    border: 2px solid #ff5b38;
+    background-color: #fff;
+    font: inherit;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 16px 200px;
+}
+
+.buy_btn:hover {
+    border: 2px solid #ff5b38;
+    background-color: #ff5b38;
+    color: #fff;
+    font: inherit;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 16px 200px;
+
+}
+
+/* =============== move_bar 이동 바 =============== */
+.move_bar {
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    /* 스크롤 시 따라다니는 고정 */
+    top: 0;
+    z-index: 90;
+}
+
+.move_bar li {
+    text-align: center;
+}
+
+.move_bar li a {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 97px;
+    background-color: #fffae6;
+
+    display: inline-block;
+
+    /* 기본에는 투명 */
+    border-bottom: 4px solid transparent;
+    box-sizing: border-box;
+}
+
+/* 이동바 - 현재 보고 있는 영역 */
+.move_bar li.active a {
+    border-bottom-color: #ff5b38;
+}
+
+/* 이동바 - 현재 영역의 margin - top */
+#diy_intro,
+#color_chart,
+#size_table {
+    scroll-margin-top: 50px;
+}
+
+.main {
+    overflow-x: clip;
+}
+
+.title_line_wrap {
+    width: 100%;
+    height: 0;
+    position: relative;
+    overflow: visible;
+}
+
+/* 왼쪽 주황선 */
+.title_line1 {
+    width: 518px;
+    position: absolute;
+    top: 500px;
+    right: calc(50% + 445px);
+    z-index: 50;
+}
+
+/* 오른쪽 주황선 */
+.title_line2 {
+    width: 518px;
+    position: absolute;
+    top: 540px;
+    left: calc(50% + 480px);
+    z-index: 50;
+}
+
+/* ===== 타이틀 주황선 애니메이션 ===== */
+
+.title_line_wrap path {
+    stroke-dasharray: var(--title-length);
+
+    animation-duration: 3.2s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+/* 주황선 1 : 빠르게 → 느리게 */
+.title_line1 path {
+    animation-name: drawTitle1;
+    animation-timing-function: cubic-bezier(.25, .65, .55, 1);
+}
+
+/* 주황선 2 : 느리게 → 빠르게 */
+.title_line2 path {
+    animation-name: drawTitle2;
+    animation-timing-function: cubic-bezier(.45, 0, .75, .35);
+}
+
+/* 처음 화면에 보이면 재생 */
+.title_line_wrap.line-start path {
+    animation-play-state: running;
+}
+
+/* 주황선1 */
+.title_line1 path {
+    animation-name: drawTitle1;
+}
+
+/* 주황선2 */
+.title_line2 path {
+    animation-name: drawTitle2;
+}
+
+/* 주황선1 */
+@keyframes drawTitle1 {
+
+    /* 처음에는 선이 없음 */
+    0% {
+        stroke-dashoffset: var(--title-length);
+    }
+
+    /* 0~20% : 왼쪽 → 오른쪽 그리기 */
+    20% {
+        stroke-dashoffset: 0;
+    }
+
+    /* 20~50% : 완성 상태 유지 */
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    /* 50~65% : 왼쪽 → 오른쪽 사라지기 */
+    65%,
+    100% {
+        stroke-dashoffset: calc(-1 * var(--title-length));
+    }
+}
+
+
+/* 주황선 2 */
+@keyframes drawTitle2 {
+
+    0%,
+    9% {
+        stroke-dashoffset: var(--title-length);
+    }
+
+    40% {
+        stroke-dashoffset: 0;
+    }
+
+    65% {
+        stroke-dashoffset: 0;
+    }
+
+    80%,
+    100% {
+        stroke-dashoffset: calc(-1 * var(--title-length));
+    }
+}
+
+/* =============== detail_page 상세페이지 (268) =============== */
+#detail_page {
+    width: 860px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+/* 기본 상태 = 전체 펼침 */
+.detail_content {
+    max-height: none;
+    overflow: visible;
+    display: flow-root;
+
+    position: relative;
+}
+
+/* 버튼 눌렀을 때 접힌 상태 */
+.detail_content.closed {
+    max-height: 3200px;
+    overflow: hidden;
+}
+
+/* 버튼 눌렀을 때 접힌 상태에 그라데이션 추가 */
+.detail_content.closed::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 250px;
+
+    background: linear-gradient(to bottom,
+            rgba(255, 250, 230, 0),
+            rgba(255, 250, 230, 1));
+
+    pointer-events: none;
+}
+
+/* ❤️DIY 인트로 파트 */
+#diy_intro {
+    width: 860px;
+    height: 1972px;
+    margin: 265px 0 250px;
+
+    position: relative;
+    /* .diy_gif 의 부모 */
+}
+
+#diy_intro img {
+    display: block;
+}
+
+/* ========== diy 타이틀 꾸밈 */
+.deco9 {
+    width: 105px;
+
+    position: absolute;
+    top: 350px;
+    right: -30px;
+    z-index: 50;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+#diy_intro .deco6 {
+    /* 주황꽃 단추 */
+    width: 150px;
+
+    position: absolute;
+    top: -5px;
+    left: 55px;
+    z-index: 50;
+
+    animation: floating 4.5s ease-in-out infinite;
+}
+
+#diy_intro .deco7 {
+    /* 초록 단추 */
+    width: 115px;
+
+    position: absolute;
+    top: 125px;
+    left: -25px;
+    z-index: 50;
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+#diy_intro .deco8 {
+    /* 털실2개 */
+    width: 111px;
+
+    position: absolute;
+    top: 285px;
+    right: 30px;
+    z-index: 50;
+
+    animation: floating 5.5s ease-in-out infinite;
+}
+
+/* ========== diy 내용 꾸밈 */
+#diy_intro .deco1 {
+    width: 79px;
+
+    position: absolute;
+    top: 975px;
+    left: 55px;
+    z-index: 50;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+#diy_intro .deco2 {
+    width: 44px;
+
+    position: absolute;
+    top: 1065px;
+    left: 120px;
+    z-index: 50;
+
+    animation: floating 5s ease-in-out infinite 0.5s;
+}
+
+#diy_intro .deco3 {
+    width: 75px;
+
+    position: absolute;
+    top: 1777px;
+    left: 555px;
+    z-index: 50;
+
+    animation: floating 4.5s ease-in-out infinite 1s;
+}
+
+#diy_intro .deco4 {
+    width: 135px;
+
+    position: absolute;
+    top: 1825px;
+    left: 690px;
+    z-index: 50;
+
+    animation: floating 5.5s ease-in-out infinite 1.5s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+}
+
+#diy_intro .blue_line {
+    width: 437px;
+
+    position: absolute;
+    top: 1155px;
+    left: 375px;
+    z-index: 50;
+
+}
+
+#diy_intro .orange_line2 {
+    width: 437px;
+
+    position: absolute;
+    top: 1285px;
+    left: -70px;
+    z-index: 50;
+
+}
+
+.orange_line1 {
+    width: 72px;
+
+    position: absolute;
+    top: 1650px;
+    left: -50px;
+    z-index: 50;
+}
+
+/* ===== SVG 선 그리기 공통 ===== */
+.blue_line path,
+.orange_line1 path,
+.orange_line2 path {
+    stroke-dasharray: var(--line-length);
+    animation-duration: 4.1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    /* 처음에는 재생하지 않음 */
+    animation-play-state: paused;
+}
+
+/* 화면에 처음 등장하면 애니메이션 시작 */
+#detail_page.line-start .blue_line path,
+#detail_page.line-start .orange_line1 path,
+#detail_page.line-start .orange_line2 path {
+    animation-play-state: running;
+}
+
+/* 1. 파란선 */
+.blue_line path {
+    animation-name: drawBlue;
+}
+
+/* 2. 주황선1 */
+.orange_line1 path {
+    animation-name: drawOrange1;
+}
+
+/* 3. 주황선2 */
+.orange_line2 path {
+    animation-name: drawOrange2;
+}
+
+/* 파란선 : 0 ~ 1.5초 */
+@keyframes drawBlue {
+    0% {
+        stroke-dashoffset: calc(-1 * var(--line-length));
+    }
+
+    36.585%,
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 주황선1 : 1.5 ~ 1.8초 */
+@keyframes drawOrange1 {
+
+    0%,
+    36.585% {
+        stroke-dashoffset: var(--line-length);
+    }
+
+    43.902%,
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* 주황선2 : 1.8 ~ 2.1초 */
+@keyframes drawOrange2 {
+
+    0%,
+    43.902% {
+        stroke-dashoffset: var(--line-length);
+    }
+
+    51.22%,
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+#diy_intro .diy_gif {
+    display: block;
+    width: 789px;
+    height: 444px;
+    
+
+    position: absolute;
+    /* #diy_intro 의 자식 */
+    top: 555px;
+    left: 35px;
+}
+
+#diy_intro .bg {
+    display: block;
+    width: 860px;
+    height: 1972px;
+}
+
+/* ❤️색조합 파트 */
+#match_part {
+    width: 860px;
+    margin: 0 auto;
+
+    position: relative;
+    /* .gif + .colorflower_wrap 의 부모 */
+}
+
+.orange_path {
+    width: 800px;
+    position: absolute;
+    top: -10px;
+    left: -70px;
+    z-index: 50;
+}
+
+/* 하나의 긴 주황선 */
+.orange_path .draw_path {
+    stroke-dasharray: var(--path-length) var(--path-length);
+    stroke-dashoffset: var(--path-length);
+
+    animation: drawOrangePath 5s linear infinite paused;
+}
+
+/* 화면 등장 시 시작 */
+#match_part.line-start .orange_path .draw_path {
+    animation-play-state: running;
+}
+
+@keyframes drawOrangePath {
+    0% {
+        stroke-dashoffset: var(--path-length);
+        animation-timing-function: cubic-bezier(.2, .8, .25, 1);
+    }
+
+    21% {
+        stroke-dashoffset: 0;
+    }
+
+    65% {
+        stroke-dashoffset: 0;
+        animation-timing-function: ease-in-out;
+    }
+
+    85%,
+    100% {
+        stroke-dashoffset: calc(-1 * var(--path-length));
+    }
+}
+
+#match_part .bg {
+    display: block;
+    width: 860px;
+    height: 1318px;
+}
+
+#match_part .gif {
+    width: 462px;
+    height: 577px;
+
+    position: absolute;
+    /* .bg 의 자식 */
+    top: 215px;
+    right: 200px;
+}
+
+.colorflower_wrap {
+    width: 616px;
+    height: 133px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 29px;
+    column-gap: 54px;
+
+    position: absolute;
+    /* #match_part 의 자식 */
+    top: 885px;
+    left: 132px;
+    z-index: 50;
+
+}
+
+.colorflower_wrap img {
+    display: block;
+    width: 57px;
+
+    transition: transform 0.5s cubic-bezier(.2, .8, .2, 1);
+}
+
+.colorflower_wrap img:hover {
+    transform: scale(1.3);
+
+    transition: transform 0.18s cubic-bezier(.2, 1.6, .4, 1);
+}
+
+/* ❤️스타일1 파트 */
+#style1 img {
+    display: block;
+    height: 11605px;
+}
+
+/* ❤️스타일2 파트 */
+#style2 img {
+    display: block;
+    height: 8476px;
+}
+
+/* ❤️스타일3 파트 */
+#style3 img {
+    display: block;
+    height: 8323px;
+}
+
+/* ❤️패키지 구성 파트 */
+#diy_package img {
+    display: block;
+    height: 600px;
+}
+
+/* ❤️실 컬러 차트 파트 */
+#color_chart img {
+    display: block;
+    height: 961px;
+}
+
+/* ❤️사이즈 파트 */
+#size_table img {
+    display: block;
+    height: 1321px;
+}
+
+/* ❤️관리법 파트 */
+#care img {
+    display: block;
+    height: 1231px;
+}
+
+/* 더보기 (접고 펼치기) 버튼 */
+.more {
+    width: 100%;
+    height: 75px;
+    padding: 18px;
+    background-color: #ff5b38;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+
+    margin-top: 90px;
+
+    display: flex;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.more img {
+    display: block;
+    width: 20px;
+    margin-left: 10px;
+
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+/* ===================== 리뷰 시작 ==================== */
+/* 🔵블루 박스 */
+#review {
+    width: 1320px;
+    margin: 188px auto 0;
+
+    scroll-margin-top: 100px;
+}
+
+#review h2 img {
+    display: block;
+    width: 172px;
+    margin-bottom: 40px;
+}
+
+.blue_wrap {
+    height: 280px;
+    background: url(../images/review/reveiw_bg.png) no-repeat center;
+
+    display: flex;
+    align-items: center;
+}
+
+.score {
+    width: 457px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 3px solid #fffae6;
+}
+
+.five_score img {
+    width: 55px;
+
+}
+
+.five_star {
+    display: flex;
+    margin-top: 10px;
+}
+
+.five_star li {
+    margin: 0 4px 0;
+}
+
+.review_rating {
+    width: 863px;
+}
+
+.review_rating span {
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.box {
+    width: 620px;
+    margin: 9px auto;
+
+    display: grid;
+    /* 왼쪽 순서대로 너비값 적용 */
+    grid-template-columns: 90px 1fr 25px;
+    align-items: center;
+    column-gap: 18px;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.yellow_bar {
+    background-color: #ffc940;
+}
+
+.gray_bar {
+    background-color: #fffae6;
+}
+
+.number {
+    justify-self: center;
+}
+
+/* 🎈🎈🎈상품리뷰(3) */
+#review h3 {
+    font-size: 26px;
+    font-weight: 600;
+
+    margin: 90px 0 24px;
+}
+
+.review_control {
+    width: 100%;
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #c9c9c9;
+    border-bottom: 1px solid #222;
+}
+
+/* 옵션바가 펼쳐지면 하단 선을 회색으로 */
+.review_control:has(+ .review_product_option.active) {
+    border-bottom-color: #c9c9c9;
+}
+
+.review_control button {
+    width: 150px;
+    padding: 8px 21px;
+    border: 0.5px solid #222;
+    border-radius: 50px;
+    background-color: #fffae6;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #787878;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 상품옵션 화살표 (412) */
+.review_control button::after {
+    content: "";
+    width: 14px;
+    height: 20px;
+    background: url(../images/qna/option_arrow.svg) no-repeat center;
+}
+
+/* 옵션바가 펼쳐지면 화살표 회전 - 시작 */
+.review_control button.active::after {
+    transform: rotate(180deg);
+}
+
+/* 옵션바가 펼쳐지면 화살표 회전 - 끝 */
+
+.review_sort {
+    display: flex;
+    cursor: pointer;
+}
+
+/* 리뷰 종류 클릭 시, 색 변경 */
+.review_sort li.active {
+    color: #ff5b38;
+    font-weight: 700;
+}
+
+.review_sort li {
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #787878;
+}
+
+/* 🧣 클릭 시, 상품 옵션 바 */
+.review_product_option {
+    width: 100%;
+    padding: 27px 21px;
+    box-sizing: border-box;
+    display: none;
+    border-bottom: 1px solid #222;
+}
+
+/* 버튼 클릭 시 옵션바 등장 */
+.review_product_option.active {
+    display: flex;
+}
+
+.option_color {
+    display: flex;
+}
+
+.option_color strong,
+.option_size strong {
+    margin-right: 80px;
+}
+
+.palette {
+    width: 360px;
+
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 25px;
+}
+
+.palette button {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    /* 버튼이 많다보니 flex가 자식을 줄일 수 도 있어 안정고정 */
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 파레트 색상 옵션 체크  */
+.palette button::after {
+    content: "";
+    display: none;
+    width: 14px;
+    height: 10px;
+
+    background: url("../images/qna/color_check1.svg") no-repeat center;
+}
+
+.palette button.active::after {
+    display: block;
+}
+
+/* 아이보리, 화이트 색상만 검정 체크 */
+.palette button[data-color="cream"]::after,
+.palette button[data-color="white"]::after {
+    background: url("../images/qna/color_check2.svg") no-repeat center;
+}
+
+.palette button[data-color="red"] {
+    background-color: #D22427;
+}
+
+.palette button[data-color="pinkishorange"] {
+    background-color: #FFACC3;
+}
+
+.palette button[data-color="saxblue"] {
+    background-color: #3052DA;
+}
+
+.palette button[data-color="babyblue"] {
+    background-color: #9EC6FF;
+}
+
+.palette button[data-color="darkyellow"] {
+    background-color: #FFC940;
+}
+
+.palette button[data-color="cream"] {
+    background-color: #FFFAE6;
+    border: 0.5px solid #333;
+}
+
+.palette button[data-color="darkgreen"] {
+    background-color: #24712D;
+}
+
+.palette button[data-color="lemonyellow"] {
+    background-color: #E2E258;
+}
+
+.palette button[data-color="black"] {
+    background-color: #333;
+}
+
+.palette button[data-color="lavender"] {
+    background-color: #C9A8E6;
+}
+
+.palette button[data-color="white"] {
+    background-color: #fff;
+    border: 0.5px solid #333;
+}
+
+.palette button[data-color="brown"] {
+    background-color: #7C5A4F;
+}
+
+
+.option_size {
+    margin-left: 114px;
+}
+
+.option_size button {
+    margin-left: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.option_size button.active {
+    color: #ff5b38;
+    font-weight: 700;
+}
+
+/* ======================= 🤍1번째 리뷰 줄 =================== */
+.review_user {
+    width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.line_bottom {
+    border-bottom: 1px solid #222;
+}
+
+.mini_star {
+    width: 230px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini_star img {
+    display: block;
+    width: 22px;
+}
+
+/* ====== 중앙 리뷰박스 (479) ====== */
+.open_wrap {
+    cursor: pointer;
+}
+
+/* 클릭 시, 리뷰 사진 : 기본 숨김 */
+.photo_section {
+    display: none;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* 클릭 시, 리뷰 사진 등장 */
+.review_user.open .photo_section {
+    display: flex;
+}
+
+/* 클릭 시, 리뷰 사진 크기 */
+.photo_section img {
+    display: block;
+    width: 208px;
+    height: 208px;
+    object-fit: cover;
+}
+
+/* 중앙 리뷰박스 (479) */
+.review_user .label3 {
+    font-size: 14px;
+    color: #787878;
+
+    display: flex;
+    justify-content: center;
+}
+
+.show_review {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px 110px;
+    column-gap: 40px;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+/* 리뷰 내용 + 미니 썸네일을 묶은 클릭 영역 */
+.click_wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 74px;
+    column-gap: 40px;
+    align-items: center;
+    min-width: 0;
+    cursor: pointer;
+}
+
+/* 색상 옵션, 리뷰 글, 큰 사진을 담는 영역 */
+.open_wrap {
+    min-width: 0;
+}
+
+/* 기본 상태 : 한 줄 + 말줄임표 */
+.open_wrap p {
+    min-width: 0;
+    max-width: 430px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 클릭 상태 : 전체 내용 표시 */
+.review_user.open .open_wrap p {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* 리뷰 클릭 시, 작은 썸네일 숨기기 */
+.review_user.open .mini_wrap {
+    visibility: hidden;
+}
+
+.two_option {
+    width: 340px;
+    max-width: 100%;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #787878;
+
+    display: flex;
+    align-items: center;
+}
+
+.two_option .label1 {
+    border: 1px solid #787878;
+    border-radius: 50px;
+    padding: 3px 10px;
+    margin-right: 10px;
+}
+
+/* 사이즈 라벨을 오른쪽에 정렬 */
+.two_option .label1:nth-last-child(2) {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* M, L 텍스트 너비 통일 */
+.two_option>span:last-child {
+    width: 15px;
+    flex-shrink: 0;
+}
+
+.two_option .circle {
+    display: inline-flex;
+    align-items: center;
+}
+
+.two_option .circle::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+    border-radius: 50px;
+
+    display: inline-block;
+}
+
+.two_option .circle.ivory::before {
+    background-color: #FFFAE6;
+    border: 1px solid #222;
+}
+
+.two_option .circle.black::before {
+    background-color: #333;
+}
+
+.two_option .circle.pinkishorange::before {
+    background-color: #FFACC3;
+}
+
+.two_option .circle.red::before {
+    background-color: #D22427;
+}
+
+.two_option .circle.babyblue::before {
+    background-color: #9EC6FF;
+}
+
+.two_option .circle.brown::before {
+    background-color: #7C5A4F;
+}
+
+
+.two_option .boundary {
+    margin: 0 8px;
+}
+
+.mini_thumbnail img {
+    display: block;
+    width: 74px;
+    height: 74px;
+
+    cursor: pointer;
+}
+
+.mini_wrap {
+    position: relative;
+}
+
+.mini_wrap button {
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+/* 페이지 넘기기 (598) */
+.review_page_number {
+    display: flex;
+    justify-content: center;
+    margin-top: 33px;
+
+    position: relative;
+    /* .page_btn 의 부모 */
+}
+
+/* 숫자 1을 정확히 중앙에 */
+.review_page_number p {
+    position: absolute;
+    left: 50%;
+}
+
+.review_page_number button {
+    margin-right: 16px;
+    color: #787878;
+}
+
+.page_btn {
+    position: absolute;
+    /* .review_page_number 의 자식 */
+    top: 0;
+    right: 565px;
+
+    line-height: 1.4;
+}
+
+.review_page_number button {
+    color: #787878;
+}
+
+/* ===================== qna 질문 ==================== */
+#qna {
+    width: 1320px;
+    margin: 190px auto;
+
+    scroll-margin-top: 200px;
+}
+
+#qna h2 img {
+    width: 95px;
+    margin-bottom: 40px;
+}
+
+.qna_table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.qna_table th,
+.qna_table td {
+    text-align: center;
+}
+
+.qna_table th {
+    background-color: #9C5A46;
+    padding: 30px 70px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.qna_table td {
+    padding: 40px 55px;
+    color: #787878;
+    font-weight: 600;
+}
+
+.qna_table td:nth-child(2) {
+    font-size: 16px;
+}
+
+.qna_table td:nth-child(3),
+.qna_table td:nth-child(4) {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.qna_table tbody tr:first-child {
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.qna_table tbody tr:last-child {
+    border-bottom: 1px solid #222;
+}
+
+.qna_table tbody td:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
+    color: #222;
+    font-weight: 500;
+}
+
+.qna_table tbody .ok {
+    color: #ff5b38;
+    font-weight: 700;
+
+    position: relative;
+    /* 답변완료 가상선택자 부모 */
+}
+
+.qna_table tbody .ok::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url(../images/qna/answer_flower.svg) no-repeat center;
+
+    position: absolute;
+    /* 답변완료 가상선택자 자식 */
+    top: 45px;
+    left: 40px;
+}
+
+.qna_table tbody .secret {
+    display: flex;
+}
+
+.qna_table tbody .secret img {
+    display: block;
+    margin-right: 10px;
+}
+
+#qna button.write {
+    margin-top: 27px;
+    display: block;
+    margin-left: auto;
+
+    padding: 15px 52px;
+    border: 1px solid #ff5b38;
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#qna button.write:hover {
+    background-color: #ff5b38;
+    color: #fff;
+}
+
+/* =============== footer 풋터 =============== */
+.footer_bg {
+    margin-top: 200px;
+    width: 100%;
+    height: 400px;
+    background: url(../images/footer/footer_bg.png) no-repeat center;
+
+    position: relative;
+    /* .line의 부모 */
+}
+
+.inner_footer {
+    width: 1320px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 56px;
+    padding-bottom: 47px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #ffffff;
+}
+
+.inner_footer li {
+    cursor: pointer;
+}
+
+.left_link ul {
+    display: flex;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.left_link ul li {
+    margin-right: 30px;
+}
+
+.newsletter p {
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    width: 381px;
+    height: 44px;
+    padding-left: 20px;
+    padding-right: 11px;
+    box-sizing: border-box;
+
+    background-color: #fffae6;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.newsletter input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.newsletter button {
+    background-color: transparent;
+}
+
+.newsletter button img {
+    display: block;
+}
+
+input::placeholder {
+    color: #ff5b38;
+    font-size: 18px;
+}
+
+.right_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.right_link ul {
+    display: flex;
+}
+
+.right_link ul li {
+    margin-left: 30px;
+}
+
+.right_link ul li img {
+    display: block;
+    width: 52px;
+}
+
+.right_link .footer_nav {
+    margin-top: 46px;
+    font-weight: 500;
+}
+
+.right_link p {
+    margin-top: 13px;
+    font-size: 12px;
+}
+
+#footer .line {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    z-index: 1;
+
+    pointer-events: none;
+    /* z-index로 인해 뉴스레터 포인트가 방해되니 라인 포인트 none 하기 */
+}
+
+#footer .line img {
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOK_상세페이지</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/header/favicon.ico" type="image/x-icon">
+
+    <!-- webfont 프리텐다드 연결-->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <!-- css 연결-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <div class="main" id="main">
+            <!-- ========== sidebar 사이드바 ========== -->
+            <ul class="side_bar">
+                <li> <img src="./images/side_bar/recent.svg" alt="recent"></li>
+                <li> <img src="./images/side_bar/chat.svg" alt="chat"></li>
+                <li> <a href="#product"><img src="./images/side_bar/top.svg" alt="top"></a></li>
+                <li> <a href="#footer"><img src="./images/side_bar/bottom.svg" alt="bottom"></a></li>
+            </ul>
+
+            <!-- ========== header 헤더 ========== -->
+            <header>
+                <div class="inner_header">
+                    <h1 class="logo">
+                        <a href="https://dasaek.github.io/KOK/"><img src="./images/header/logo.svg" alt="logo"></a>
+                    </h1>
+
+                    <ul class="gnb">
+                        <li><a href="#new_arrival">신상품</a></li>
+                        <li><a href="#collection1">콜렉션</a></li>
+                        <li><a href="#story">브랜드소개</a></li>
+                        <li><a href="#event">이벤트</a></li>
+                        <li><a href="#sns">SNS</a></li>
+                    </ul>
+
+
+                    <ul class="util">
+                        <li class="search">
+                            <a href="#"><img src="./images/header/search.svg" alt="search2"></a>
+                        </li>
+                        <li class="bag">
+                            <a href="#"><img src="./images/header/bag.svg" alt="bag2"></a>
+                        </li>
+                        <li class="heart">
+                            <a href="#"><img src="./images/header/heart.svg" alt="heart2"></a>
+                        </li>
+                        <li class="mypage">
+                            <a href="#"><img src="./images/header/mypage.svg" alt="mypage2"></a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- ========== product 상품 ========== -->
+            <div id="product">
+
+                <div class="inner_wrap"> <!-- 부모박스 🐦🐦 -->
+
+                    <!-- --- 상품 이미지 🐦 --- -->
+                    <div class="img_wrap">
+                        <img src="./images/product/kint.png" alt="kint">
+                    </div>
+
+                    <!-- --- 상품 선택 정보 🐦 --- -->
+                    <div class="info">
+
+                        <!-- 위시리스트 + 공유 버튼 -->
+                        <div class="action_button">
+                            <div class="wish_btn">
+                                <img src="./images/product/wish_button.svg" alt="wish">
+                            </div>
+
+                            <div class="share_btn">
+                                <img src="./images/product/share_button.svg" alt="share">
+                            </div>
+                        </div>
+
+                        <div class="name">
+                            <h3>써니 플라워 니트 Kit</h3>
+                            <span>DIY</span>
+                        </div>
+
+                        <div class="level">
+                            <p>난이도</p>
+
+                            <div class="square">
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <p class="video">동영상 포함</p>
+
+                        <p class="price">27,000원</p>
+
+                        <!-- 배송비 - 정렬1 -->
+                        <div class="delive">
+                            <strong>배송비</strong>
+                            <p>3,000원 (50,000원 이상 구매 시 무료)</p>
+                        </div>
+
+
+                        <!-- 사이즈 옵션바 - 정렬2 -->
+                        <div class="size">
+                            <strong>사이즈 (구성)</strong>
+
+                            <select name="KintSize" id="size">
+                                <option value="" selected disabled>사이즈 (구성) 선택하기</option>
+                                <option value="M">M (100g 3볼 + 100g 2볼)</option>
+                                <option value="L">L (100g 4볼 + 100g 2볼) + 3000원</option>
+                            </select>
+                        </div>
+
+
+                        <!-- 색상 - 정렬3 -->
+                        <div class="color">
+                            <strong>색상</strong>
+
+                            <div class="color_select_wrap">
+                                <div class="color_select" data-type="base">
+                                    <button type="button" class="color_btn">
+                                        <span>+</span>
+                                    </button>
+                                    <p>베이스</p>
+                                </div>
+
+                                <div class="color_select" data-type="point">
+                                    <button type="button" class="color_btn color_point">
+                                        <span>+</span>
+                                    </button>
+                                    <p>포인트</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 색상 클릭 시 나타나는 옵션바 -->
+                        <div class="color_list">
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/56.red.png" alt="red">
+                                </button>
+                                <p>56. <br> 레드</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/141.saxblue.png" alt="saxblue">
+                                </button>
+                                <p>141. <br> 삭스 블루</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/35.darkgreen.png" alt="darkgreen">
+                                </button>
+                                <p>35. <br> 다크 그린</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/216.darkyellow.png" alt="darkyellow">
+                                </button>
+                                <p>216. <br> 다크 옐로우</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/43.lavender.png" alt="lavender">
+                                </button>
+                                <p>43. <br> 라벤더</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/638.pinkishorange.png" alt="pinkishorange">
+                                </button>
+                                <p>638. <br> 핑키시 오렌지</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/40.babyblue.png" alt="babyblue">
+                                </button>
+                                <p>40. <br> 베이비 블루</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/668.lemonyellow.png" alt="lemonyellow">
+                                </button>
+                                <p>668. <br> 레몬 옐로우</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/01.cream.png" alt="cream">
+                                </button>
+                                <p>01. <br> 크림</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/26.brown.png" alt="brown">
+                                </button>
+                                <p>26. <br> 브라운</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/55.white.png" alt="white">
+                                </button>
+                                <p>55. <br> 화이트</p>
+                            </div>
+
+                            <div class="color_chip">
+                                <button type="button">
+                                    <img src="./images/product/60.black.png" alt="black">
+                                </button>
+                                <p>60. <br> 블랙</p>
+                            </div>
+                        </div>
+
+
+                        <div class="total_price">
+                            <p>총 결제금액</p>
+                            <p class="won">0원</p>
+                        </div>
+
+
+                        <!-- 장바구니 + 구매 버튼 -->
+                        <div class="button">
+                            <button type="button" class="cart_btn">
+                                <img src="./images/product/cart_button.svg" alt="cart">
+                            </button>
+
+                            <button type="button" class="buy_btn">
+                                구매하기
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========  이동 바 ==========  -->
+            <ul class="move_bar">
+                <li class="active"><a href="#diy_intro">상품정보</a></li>
+                <li><a href="#color_chart">색상</a></li>
+                <li><a href="#size_table">사이즈</a></li>
+                <li><a href="#review">리뷰</a></li>
+                <li><a href="#qna">Q&A</a></li>
+            </ul>
+
+            <!-- ==========  상세 페이지 - 시작 (605) ========== -->
+
+            <div class="title_line_wrap">
+                <svg class="title_line1" width="509" height="46" viewBox="0 0 509 46" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-12 43.4521C143.01 -2.44704 300.615 -13.6554 506.5 29.9295" stroke="#FF5B38"
+                        stroke-width="5" stroke-linecap="round" />
+                </svg>
+
+                <svg class="title_line2" width="413" height="28" viewBox="0 0 413 28" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.50049 2.50061C65.0005 19.1673 237.4 42.5006 427 2.50061" stroke="#FF5B38"
+                        stroke-width="5" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <div id="detail_page">
+
+                <img class="deco9" src="./images/detail_page/diy_needle.svg" alt="코바늘">
+
+                <svg class="orange_line1" width="75" height="33" viewBox="0 0 75 33" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 30.7879C13.069 32.7161 41.0953 28.5212 73.2771 1.5" stroke="#FF5B38" stroke-width="3"
+                        stroke-linecap="round" />
+                </svg>
+
+                <div class="detail_content closed">
+                    <!-- ❤️DIY 인트로 파트 -->
+                    <div id="diy_intro">
+                        <img class="deco6" src="./images/detail_page/flower_button.svg" alt="주황꽃 단추">
+                        <img class="deco7" src="./images/detail_page/green_button.svg" alt="초록 단추">
+                        <img class="deco8" src="./images/detail_page/two_bowl1.svg" alt="털실 2개">
+
+                        <img class="deco1" src="./images/detail_page/yellow_flower.svg" alt="노란꽃">
+                        <img class="deco2" src="./images/detail_page/green_flower.svg" alt="초록꽃">
+                        <img class="deco3" src="./images/detail_page/green_bowl.svg" alt="초록실">
+                        <img class="deco4" src="./images/detail_page/two_bowl2.svg" alt="실2개">
+
+                        <img class="diy_gif" src="./images/detail_page/diy_make.gif" alt="diy_make">
+
+                        <svg class="blue_line" width="441" height="60" viewBox="0 0 441 60" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M435.5 55.6826C441.5 36.3493 444 0.782618 406 13.1826C358.5 28.6826 357.5 56.1826 366 50.1826C384.5 37.1826 357 -19.3174 311.5 10.6826C266 40.6826 292 63.6826 296.5 41.6826C305.5 1.68262 268 1.68262 234 16.1826C200 30.6826 197.5 67.1826 212.5 56.1825C244 25.1824 212.5 -8.31741 167 4.18259C121.5 16.6826 124 53.1826 135 48.6826C146 44.1826 141.5 14.1826 124 6.68247C78.5 -10.8175 46 55.6825 54.5 56.1825C63 56.6825 72 19.1825 41.5 10.6825C26.7943 6.83898 13.1474 11.5885 1.5 19.9654"
+                                stroke="#2558D8" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+
+                        <svg class="orange_line2" width="86" height="42" viewBox="0 0 86 42" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 40.0001C35.3533 4.24817 57.3604 -9.91995 83.8924 11.7881" stroke="#FF5B38"
+                                stroke-width="3" stroke-linecap="round" />
+                        </svg>
+
+
+                        <img class="bg" src="./images/detail_page/diy_intro.png" alt="diy_intro">
+                    </div>
+
+                    <!-- ❤️색조합 파트 -->
+                    <div id="match_part">
+
+                        <svg class="orange_path" width="633" height="139" viewBox="0 0 633 139" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <clipPath id="orangePathClip">
+                                    <!-- 왼쪽 주황선만 보이기 -->
+                                    <rect x="0" y="0" width="80" height="139" />
+
+                                    <!-- 오른쪽 주황선만 보이기 -->
+                                    <rect x="450" y="0" width="240" height="139" />
+                                </clipPath>
+                            </defs>
+                            <path class="draw_path"
+                                d="M1.50049 137.012C96.0005 95.0129 410 13.7754 555.5 2.89413C701 -7.98716 594 48.0122 572 60.5122"
+                                stroke="#FF5B38" stroke-width="3" stroke-linecap="round"
+                                clip-path="url(#orangePathClip)" />
+                        </svg>
+
+                        <div class="colorflower_wrap">
+                            <img src="./images/detail_page/colorflower_red.svg" alt="빨간 꽃">
+                            <img src="./images/detail_page/colorflower_blue.svg" alt="파란 꽃">
+                            <img src="./images/detail_page/colorflower_yellow.svg" alt="노란 꽃">
+                            <img src="./images/detail_page/colorflower_green.svg" alt="초록 꽃">
+                            <img src="./images/detail_page/colorflower_black.svg" alt="블랙 꽃">
+                            <img src="./images/detail_page/colorflower_white.svg" alt="흰 꽃">
+                            <img src="./images/detail_page/colorflower_pink.svg" alt="분홍 꽃">
+                            <img src="./images/detail_page/colorflower_babyblue.svg" alt="하늘색 꽃">
+                            <img src="./images/detail_page/colorflower_ivory.svg" alt="아이보리 꽃">
+                            <img src="./images/detail_page/colorflower_lemongreen.svg" alt="연두 꽃">
+                            <img src="./images/detail_page/colorflower_lavender.svg" alt="라벤더 꽃">
+                            <img src="./images/detail_page/colorflower_brown.svg" alt="브라운 꽃">
+                        </div>
+
+                        <img class="gif" src="./images/detail_page/match_GIF.gif" alt="match_GIF">
+                        <img class="bg" src="./images/detail_page/match_bg.png" alt="match_bg">
+                    </div>
+
+                    <!-- ❤️스타일1 파트 -->
+                    <div id="style1">
+                        <img src="./images/detail_page/style1.png" alt="style1">
+                    </div>
+
+                    <!-- ❤️스타일2 파트 -->
+                    <div id="style2">
+                        <img src="./images/detail_page/style2.png" alt="style2">
+                    </div>
+
+                    <!-- ❤️스타일3 파트 -->
+                    <div id="style3">
+                        <img src="./images/detail_page/style3.png" alt="style3">
+                    </div>
+
+                    <!-- ❤️패키지 구성 파트 -->
+                    <div id="diy_package">
+                        <img src="./images/detail_page/diy_package.png" alt="diy_package">
+                    </div>
+
+                    <!-- ❤️실 컬러 차트 파트 -->
+                    <div id="color_chart">
+                        <img src="./images/detail_page/color_chart.png" alt="color_chart">
+                    </div>
+
+                    <!-- ❤️사이즈 파트 -->
+                    <div id="size_table">
+                        <img src="./images/detail_page/size.png" alt="size">
+                    </div>
+
+                    <!-- ❤️관리법 파트-->
+                    <div id="care">
+                        <img src="./images/detail_page/care.png" alt="care">
+                    </div>
+                </div>
+
+                <!-- 더보기 (접고 펼치기) 버튼-->
+                <button type="button" class="more">
+                    <span>더보기</span>
+                    <img src="./images/detail_page/more_arrow.svg" alt="more_arrow">
+                </button>
+            </div>
+
+
+            <!-- ================= 리뷰 시작 (779) =============== -->
+            <div id="review">
+                <h2><img src="./images/review/REVIEW.png" alt="title"></h2>
+
+                <!-- 리뷰 🔵🔵파란 박스 -->
+                <div class="blue_wrap">
+
+                    <div class="score"> <!-- 🔵 자식 -->
+                        <div class="five_score">
+                            <img src="./images/review/five_score.png" alt="five_score">
+                        </div>
+
+                        <ul class="five_star">
+                            <li><img src="./images/review/Star.svg" alt="Star"></li>
+                            <li><img src="./images/review/Star.svg" alt="Star"></li>
+                            <li><img src="./images/review/Star.svg" alt="Star"></li>
+                            <li><img src="./images/review/Star.svg" alt="Star"></li>
+                            <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        </ul>
+                    </div>
+
+                    <div class="review_rating"> <!-- 🔵 자식 -->
+                        <!-- ⭐ -->
+                        <div class="box">
+                            <span class="label">아주좋아요</span>
+
+                            <div class="bar yellow_bar">
+
+                            </div>
+
+                            <span class="number">3</span>
+                        </div>
+
+                        <!-- ⭐ -->
+                        <div class="box">
+                            <span class="label">맘에 들어요</span>
+
+                            <div class="bar gray_bar">
+
+                            </div>
+
+                            <span class="number">0</span>
+                        </div>
+
+                        <!-- ⭐ -->
+                        <div class="box">
+                            <span class="label">보통이에요</span>
+
+                            <div class="bar gray_bar">
+
+                            </div>
+
+                            <span class="number">0</span>
+                        </div>
+
+                        <!-- ⭐ -->
+                        <div class="box">
+                            <span class="label">그냥 그래요</span>
+
+                            <div class="bar gray_bar">
+
+                            </div>
+
+                            <span class="number">0</span>
+                        </div>
+
+                        <!-- ⭐ -->
+                        <div class="box">
+                            <span class="label">별로에요</span>
+
+                            <div class="bar gray_bar">
+
+                            </div>
+
+                            <span class="number">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎈🎈🎈======= -->
+                <h3>상품리뷰 (3)</h3>
+
+                <div class="review_control">
+                    <button>
+                        <span>상품 옵션</span>
+                    </button>
+
+                    <!-- 리뷰 종류 목록 -->
+                    <ul class="review_sort">
+                        <li class="active">최신순</li>
+                        <li>평점 높은순</li>
+                        <li>평점 낮은순</li>
+                        <li>KOK 선정</li>
+                    </ul>
+                </div>
+
+                <!-- 🧣 클릭 시, 상품옵션 바 -->
+                <div class="review_product_option">
+
+                    <div class="option_color">
+                        <strong>색상</strong>
+
+                        <div class="palette">
+                            <button type="button" data-color="red" aria-label="레드"></button>
+
+                            <button type="button" data-color="pinkishorange" aria-label="핑키시오렌지"></button>
+
+                            <button type="button" data-color="saxblue" aria-label="삭스블루"></button>
+
+                            <button type="button" data-color="babyblue" aria-label="베이비블루"></button>
+
+                            <button type="button" data-color="darkyellow" aria-label="다크옐로우"></button>
+
+                            <button type="button" data-color="cream" aria-label="크림"></button>
+
+                            <button type="button" data-color="darkgreen" aria-label="다크그린"></button>
+
+                            <button type="button" data-color="lemonyellow" aria-label="레몬옐로우"></button>
+
+                            <button type="button" data-color="black" aria-label="블랙"></button>
+
+                            <button type="button" data-color="lavender" aria-label="라벤더"></button>
+
+                            <button type="button" data-color="white" aria-label="화이트"></button>
+
+                            <button type="button" data-color="brown" aria-label="브라운"></button>
+                        </div>
+                    </div>
+
+                    <div class="option_size">
+                        <strong>사이즈</strong>
+
+                        <button type="button">M</button>
+                        <button type="button">L</button>
+                    </div>
+
+                </div>
+
+                <!-- ======================= 🤍1번째 리뷰 줄 ===================-->
+                <div class="review_user line_top" data-color=" cream black" data-size="M">
+
+                    <ul class="five_star mini_star">
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                    </ul>
+
+                    <!-- ====== 중앙 리뷰박스 (1086) ======-->
+                    <div class="show_review"> <!-- 🤎🤎 -->
+
+                        <div class="click_wrap">
+                            <div class="open_wrap"> <!-- 🤎 -->
+                                <div class="two_option">
+                                    <span class="label1">색상</span>
+                                    <span class="circle ivory">아이보리</span>
+                                    <span class="boundary">/</span>
+                                    <span class="label2 circle black">블랙</span>
+                                    <span class="label1">사이즈</span>
+                                    <span>M</span>
+                                </div>
+
+                                <p>
+                                    만들어진 옷만 사다가 한 번 도전해봤는데 또 다른 재미가 있어요.
+                                    뿌듯하고 레이어드하기 너무 예뻐요🥰
+                                </p>
+
+                                <!-- 클릭 시, 등장-->
+                                <div class="photo_section">
+                                    <div>
+                                        <img src="./images/review/photo1.png" alt="photo1">
+                                    </div>
+                                    <div>
+                                        <img src="./images/review/photo1.png" alt="photo2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ====== 오른쪽 섹션 미니포토리뷰 🤎 -->
+                            <div class="mini_wrap">
+                                <button>2</button>
+                                <div class="mini_thumbnail">
+                                    <img src="./images/review/photo1.png" alt="photo2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="label3">bun*****</span> <!-- 🤎 -->
+
+                        <span class="label3">2026.09.11</span> <!-- 🤎 -->
+                    </div>
+                </div>
+
+                <!-- ======================= 🤍2번째 리뷰 줄 ===================-->
+                <div class="review_user" data-color=" pinkishorange red" data-size="L">
+                    <ul class="five_star mini_star">
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                    </ul>
+
+                    <!-- ====== 중앙 리뷰박스 ======-->
+                    <div class="show_review"> <!-- 🤎🤎 -->
+
+                        <div class="click_wrap">
+                            <div class="open_wrap"> <!-- 🤎 -->
+                                <div class="two_option">
+                                    <span class="label1">색상</span>
+                                    <span class="circle pinkishorange">핑키시오렌지</span>
+                                    <span class="boundary">/</span>
+                                    <span class="label2 circle red">레드</span>
+
+                                    <span class="label1">사이즈</span>
+                                    <span>L</span>
+                                </div>
+
+                                <p>
+                                    생각보다 어렵지 않고 완성했을 때 뿌듯해요. 색도 다양해서 저만의
+                                    옷을 갖게 된 것 같아 좋습니다 :) 👍👍
+                                </p>
+                            </div>
+
+
+                            <div></div>
+                        </div>
+
+                        <span class="label3">pin********</span>
+
+                        <span class="label3">2026.09.07</span>
+
+                    </div>
+                </div>
+
+                <!-- ======================= 🤍3번째 리뷰 줄 ===================-->
+                <div class="review_user line_bottom" data-color=" babyblue brown" data-size="M">
+                    <ul class="five_star mini_star">
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                        <li><img src="./images/review/Star.svg" alt="Star"></li>
+                    </ul>
+
+                    <!-- ====== 중앙 리뷰박스 ======-->
+                    <div class="show_review"> <!-- 🤎🤎 -->
+
+                        <div class="click_wrap">
+                            <div class="open_wrap"> <!-- 🤎 -->
+                                <div class="two_option">
+                                    <span class="label1">색상</span>
+                                    <span class="circle babyblue">베이비블루</span>
+                                    <span class="boundary">/</span>
+                                    <span class="label2 circle brown">브라운</span>
+
+                                    <span class="label1">사이즈</span>
+                                    <span>M</span>
+                                </div>
+
+                                <p>
+                                    레이어드하기 너무 좋고 색 조합이 이뻐요!!
+                                </p>
+                            </div>
+
+                            <div></div>
+                        </div>
+
+                        <span class="label3">kim*****</span>
+
+                        <span class="label3">2026.09.05</span>
+
+                    </div>
+                </div>
+
+                <!-- 페이지 넘기기 (1191) -->
+                <div class="review_page_number">
+                    <p>1</p>
+                    <div class="page_btn">
+                        <button>></button>
+                        <button>>></button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ==========  qna 질문 (1028) ========== -->
+            <div id="qna">
+                <h2><img src="./images/qna/Q&A.png" alt="title"></h2>
+
+                <table class="qna_table">
+
+                    <!-- 열 너비 -->
+                    <colgroup>
+                        <col style="width: 15%;">
+                        <col style="width: 55%;">
+                        <col style="width: 15%;">
+                        <col style="width: 15%;">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>상태</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>답변대기</td>
+                            <td>초보자가 만들기에 어려울까요?</td>
+                            <td>26s****</td>
+                            <td>2026.09.11</td>
+                        </tr>
+
+                        <tr>
+                            <td class="ok">답변완료</td>
+                            <td class="secret">
+                                <img src="./images/qna/block_icon.svg" alt="block_icon">
+                                <span>비밀글입니다.</span>
+                            </td>
+                            <td>pin********</td>
+                            <td>2026.09.07</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="write">Q&A 작성하기</button>
+
+                <div class="review_page_number">
+                    <p>1</p>
+                    <div class="page_btn">
+                        <button>></button>
+                        <button>>></button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ========== footer 풋터 ========== -->
+            <div id="footer">
+
+                <div class="footer_bg">
+
+                    <div class="inner_footer">
+                        <div class="left_link"> <!-- 이너풋터 자식1 -->
+                            <ul>
+                                <li>마이페이지</li>
+                                <li>위시리스트</li>
+                                <li>주문배송조회</li>
+                                <li>고객문의</li>
+                            </ul>
+
+                            <section class="newsletter">
+
+                                <p>Newsletter</p>
+
+                                <form action="" method="post">
+                                    <input type="email" name="e-mail" id="em" placeholder="Enter your email">
+
+                                    <button type="button">
+                                        <img src="./images/footer/email_icon.svg" alt="email_icon">
+                                    </button>
+                                </form>
+
+                            </section>
+                        </div>
+
+                        <div class="right_link"> <!-- 이너풋터 자식2 -->
+                            <ul>
+                                <li><img src="./images/footer/youtube.svg" alt="youtube"></li>
+
+                                <li><img src="./images/footer/insta.svg" alt="insta"></li>
+
+                                <li><img src="./images/footer/pinterest.svg" alt="pinterest">
+                                </li>
+                            </ul>
+
+                            <ul class="footer_nav">
+                                <li>브랜드소개</li>
+                                <li>전체상품</li>
+                                <li>이용약관</li>
+                                <li>개인정보처리방침</li>
+                                <li>이용안내</li>
+                            </ul>
+
+                            <p>
+                                copyright © 2026 KKOK. All rights reserved.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="line">
+                        <img src="./images/footer/line.svg" alt="line">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- js 오픈소스 연결 -->
+        <script src="./js/jquery-4.0.0.min.js"></script>
+
+        <!-- js kok link 연결 -->
+        <script src="./js/script.js"></script>
+</body>
+
+</html>
